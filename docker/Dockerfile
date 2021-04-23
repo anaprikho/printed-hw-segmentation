@@ -1,4 +1,5 @@
-FROM ubuntu:cosmic
+#FROM ubuntu:cosmic
+FROM ubuntu:18.04
 LABEL maintainer="nicolas.dutly@unifr.ch"
 RUN apt-get update && apt-get install libxcb1 libexpat1 dos2unix libgl1-mesa-glx --no-install-recommends -y && rm -rf /var/lib/apt/lists/*
 COPY ./code/* /input/

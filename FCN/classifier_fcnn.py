@@ -67,8 +67,8 @@ if __name__ == "__main__":
     parser.add_argument("--enableCRF", help="Use crf for postprocessing",
                         action="store_true")
     parser.add_argument("--ground_truth", help="ground truth file name. Classes must be encoded in the blue channel as 1:printed, 2:hw, 4:bg")
-    parser.add_argument("input_image", help="input image file name")
-    parser.add_argument("output_folder", help="output folder")
+    parser.add_argument('-i', "--input_image", help="input image file name")
+    parser.add_argument('-o', "--output_folder", help="output folder")
     args = parser.parse_args()
     inputim = io.imread(args.input_image)
     output_folder = args.output_folder
