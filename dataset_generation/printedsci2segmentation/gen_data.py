@@ -1,11 +1,13 @@
 import skimage.io as io
 import numpy as np
 import matplotlib.pyplot as plt
+from skimage.color import rgba2rgb
+
 from img_utils import *
 from post_processing import *
 from scipy import ndimage
 from tqdm import tqdm
-imgdb = io.imread_collection('in/*')
+imgdb = io.imread_collection('C:/Users/prikha/Downloads/BA/Datasets/HTSNet_scanned_documents/jottueset/*.png')
 
 for i, im in enumerate(tqdm(imgdb, unit='image')):
     im[:, :,0][im[:, :, 0] > 50] = 255
@@ -18,11 +20,12 @@ for i, im in enumerate(tqdm(imgdb, unit='image')):
 
 
     im2 = gray2rgb(im2)
-    mask = np.zeros(im.shape)
+    #im2 = rgb2gray(rgba2rgb(im2))
+    mask = np.zeros(im2.shape)
 
     mask[:, :][np.where((im2[:, :] == [1, 1, 1]).all(axis=2))] = [
         1, 0, 0]
-    mask[:, :][np.where((im[:, :] == [255, 0, 0]).all(axis=2))] = [
+    mask[:, :][np.where((im2[:, :] == [255, 0, 0]).all(axis=2))] = [
         0, 1, 0]
     mask[:, :][np.where((im2[:, :] == [0, 0, 0]).all(axis=2))] = [
         0, 0, 1]
