@@ -12,10 +12,10 @@ from img_utils import *
 XML_DATA_PATH = 'C:/Users/prikha/Downloads/BA/Datasets/IAM handwriting database/xml/xml/'     # 'C:/Users/prikha/Downloads/BA/Datasets/IAM handwriting database/xml/xml/'
 IM_DATA_PATH = 'C:/Users/prikha/Downloads/BA/Datasets/IAM handwriting database/formsE-H/formsE-H'
 
-IM_OUT_PATH = 'C:/Users/prikha/Downloads/BA/Datasets/IAM handwriting database/iam_gt_output_dsy/'
+IM_OUT_PATH = 'C:/Users/prikha/Downloads/BA/Datasets/IAM handwriting database/iam_gt_output_final/'
 
 
-def xml2segmentation(image, ground_truth, name, y_lo=645, y_up=2215, x_lim=20):
+def xml2segmentation(image, ground_truth, name, y_lo=645, y_up=2215+570, x_lim=20):
     """
     Takes an image file and groundtruth file from the RIMES dataset
     and outputs an RGB image with pixel-wise labels:
@@ -42,7 +42,7 @@ def xml2segmentation(image, ground_truth, name, y_lo=645, y_up=2215, x_lim=20):
 
     orgim = np.copy(image)
     image = ndimage.filters.median_filter(image, 3)
-    image = image[:y_up+550, :]
+    image = image[:y_up, :]
     #image = image[:y_up, x_lim:]
     bin_im = getbinim(image)
     bin_im = gray2rgb(bin_im)
@@ -94,18 +94,18 @@ def xml2segmentation(image, ground_truth, name, y_lo=645, y_up=2215, x_lim=20):
     #y_upper_boundary = int(doc['form']['handwritten-part']['line'][0]['@asy']) - \
     #                   int(doc['form']['handwritten-part']['line'][0]['@threshold'])
 
-    difference = int(doc['form']['handwritten-part']['line'][0]['@dsy']) - int(doc['form']['handwritten-part']['line'][0]['@uby'])
+    #difference = int(doc['form']['handwritten-part']['line'][0]['@dsy']) - int(doc['form']['handwritten-part']['line'][0]['@uby'])
     #y_upper_boundary = int(doc['form']['handwritten-part']['line'][0]['@asy']) - difference
-    y_upper_boundary = 660
-    print("asy value: ", y_upper_boundary)
-    print("difference: ", difference)
+    #y_upper_boundary = 660
+    #print("asy value: ", y_upper_boundary)
+    #print("difference: ", difference)
     #print(int(doc['form']['handwritten-part']['line'][0]['@dsy'])-int(doc['form']['handwritten-part']['line'][0]['@asy']))
 
-    mask[0:y_upper_boundary, :][np.where(
-        (bin_im[0:y_upper_boundary, :] == [1, 1, 1]).all(axis=2))] = [1, 0, 0]
+    mask[0:y_lo, :][np.where(
+        (bin_im[0:y_lo, :] == [1, 1, 1]).all(axis=2))] = [1, 0, 0]
 
-    mask[y_upper_boundary:, :][np.where(
-        (bin_im[y_upper_boundary:, :] == [1, 1, 1]).all(axis=2))] = [0, 1, 0]
+    mask[y_lo:y_up, :][np.where(
+        (bin_im[y_lo:y_up, :] == [1, 1, 1]).all(axis=2))] = [0, 1, 0]
 
     mask[:, :][np.where(
         (bin_im[:, :] == [0, 0, 0]).all(axis=2))] = [0, 0, 1]
