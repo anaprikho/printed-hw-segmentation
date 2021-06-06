@@ -3,29 +3,24 @@ from PIL import Image, ImageDraw
 import cv2
 import numpy as np
 
-JSON_DATA_PATH = "C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_107/vott-json-export/wgm_photo_107-export.json"
-JPG_ORIGIM_PATH = "C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_107/vott-json-export/"
+JSON_DATA_PATH = "C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_110/vott-json-export/wgm_photo_110-export.json"
+JPG_ORIGIM_PATH = "C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_110/vott-json-export/"
 
-IM_OUT_PATH_STAMP = 'C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_107/cropped_stamp/'
-IM_OUT_PATH_SIGNATURE = 'C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_107/cropped_signature/'
-IM_OUT_PATH_HANDWRITTEN = 'C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_107/cropped_handwritten/'
-IM_OUT_PATH_MACHINEPRINTED = 'C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_107/cropped_machineprinted/'
-IM_OUT_PATH_NOISE = 'C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_107/cropped_noise/'
+IM_OUT_PATH_STAMP = 'C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_110/cropped_stamp/'
+IM_OUT_PATH_SIGNATURE = 'C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_110/cropped_signature/'
+IM_OUT_PATH_HANDWRITTEN = 'C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_110/cropped_handwritten/'
+IM_OUT_PATH_MACHINEPRINTED = 'C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_110/cropped_machineprinted/'
+IM_OUT_PATH_MIXED = 'C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/output VoTT/output_photo_StAFF F 196-10_110/cropped_mixed/'
 
 
 def json2fragments(data):
-    # print(json.dumps(data, indent=2))
-    # print(len(data.keys()))
-    # print(len(data))
 
-    keys_arr = list(data.keys())
-    for key in range(len(keys_arr)):
-        name_im = data[keys_arr[key]]['asset']['name']
-        # img = Image.open(JPG_ORIGIM_PATH + name_im)
-        asset = data[keys_arr[key]]['regions']
-        # print(asset)
+    assets = list(data.keys())
+    for asset in range(len(assets)):
+        name_im = data[assets[asset]]['asset']['name']  # image name
+        regions = data[assets[asset]]['regions']  # an asset containing all tagged regions of an image
 
-        for region in asset:
+        for region in regions:
             region_id = region['id']
             print('id: ', region_id)
             region_type = region['type']
@@ -34,20 +29,6 @@ def json2fragments(data):
             print('tags: ', region_tag)
             region_points = region['points']
             print('points: ', region_points)
-
-            # try:
-            #     if tags == 'stamp':
-            #         img2.save(IM_OUT_PATH_STAMP + id + '_cropped.jpg', 'JPEG')
-            #     elif tags == 'signature':
-            #         img2.save(IM_OUT_PATH_SIGNATURE + id + '_cropped.jpg', 'JPEG')
-            #     elif tags == 'handwritten':
-            #         img2.save(IM_OUT_PATH_HANDWRITTEN + id + '_cropped.jpg', 'JPEG')
-            #     elif tags == 'machineprinted':
-            #         img2.save(IM_OUT_PATH_MACHINEPRINTED + id + '_cropped.jpg', 'JPEG')
-            #     elif tags == 'noise':
-            #         img2.save(IM_OUT_PATH_NOISE + id + '_cropped.jpg', 'JPEG')
-            # except SystemError:
-            #     print("Trying to crop a region beyond the dimension of the image.")
 
             try:
 
@@ -58,7 +39,7 @@ def json2fragments(data):
                         # print(points[i])
                         d = region_points[i]
                         coord = tuple([d[field] for field in ['x', 'y']])
-                        polygon_corners.append(coord)
+                        polygon_corners.append(coord)  # array with coordinates of polygon corners
 
                     # ------------------------------------------------------------------------
                     # with cv2 (with BLACK MASK)
@@ -110,6 +91,7 @@ def json2fragments(data):
                     # newIm = Image.fromarray(new_img_array, "RGB")
                     # newIm.save(IM_OUT_PATH_STAMP + id + '_cropped.jpg')
 
+                    # ------------------------CROPING POLYGON AREA FROM IMAGE------------------------
                     # with cv2 (with WHITE MASK)
                     img = cv2.imread(JPG_ORIGIM_PATH + name_im)
                     mask = np.zeros(img.shape[0:2], dtype=np.uint8)
@@ -123,16 +105,14 @@ def json2fragments(data):
                     cv2.bitwise_not(wbg, wbg, mask=mask)
                     # overlap the resulted cropped image on the white background
                     dst = wbg + res
-                    cv2.imwrite(IM_OUT_PATH_STAMP + region_id + '_cropped.jpg', dst)
 
                     if region_tag == 'stamp':
                         cv2.imwrite(IM_OUT_PATH_STAMP + region_id + '_cropped.jpg', dst)
                     elif region_tag == 'signature':
                         cv2.imwrite(IM_OUT_PATH_SIGNATURE + region_id + '_cropped.jpg', dst)
-                    elif region_tag == 'noise':
-                        cv2.imwrite(IM_OUT_PATH_NOISE + region_id + '_cropped.jpg', dst)
 
                 else:
+                    # ------------------------CROPING RECTANGULAR AREA FROM IMAGE------------------------
                     x_left, x_right = region_points[0]['x'], region_points[1]['x']
                     y_top, y_bottom = region_points[0]['y'], region_points[2]['y']
 
@@ -147,8 +127,8 @@ def json2fragments(data):
                         img_cropped.save(IM_OUT_PATH_HANDWRITTEN + region_id + '_cropped.jpg', 'JPEG')
                     elif region_tag == 'machineprinted':
                         img_cropped.save(IM_OUT_PATH_MACHINEPRINTED + region_id + '_cropped.jpg', 'JPEG')
-                    elif region_tag == 'noise':
-                        img_cropped.save(IM_OUT_PATH_NOISE + region_id + '_cropped.jpg', 'JPEG')
+                    elif region_tag == 'mixed':
+                        img_cropped.save(IM_OUT_PATH_MIXED + region_id + '_cropped.jpg', 'JPEG')
 
                     print("------------------END OF A REGION----------------")
 
