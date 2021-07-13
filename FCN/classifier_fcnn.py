@@ -31,11 +31,11 @@ STRIDE = BOXWDITH - 10
 
 def classify(image):
     try:
-        model = load_model('/input/models/fcnn_bin.h5', custom_objects={
+        model = load_model('/input/models/fcnn_my_jpg_png.h5', custom_objects={
                     'loss': weighted_categorical_crossentropy([0.4,0.5,0.1]), 'IoU': IoU})
     except OSError:
         # Use relative file path if anyone tries to run the generated binary without using the provided docker image
-        model = load_model('models/fcnn_bin.h5', custom_objects={
+        model = load_model('models/fcnn_my_jpg_png.h5', custom_objects={
                             'loss': weighted_categorical_crossentropy([0.4,0.5,0.1]), 'IoU': IoU})
     orgim = np.copy(image)
     image = img_as_float(gray2rgb(getbinim(image)))
