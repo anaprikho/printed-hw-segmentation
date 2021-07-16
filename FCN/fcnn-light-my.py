@@ -37,11 +37,11 @@ print("Reading images...")
 # path = os.getcwd()
 # os.chdir('../')
 
-inputs_train = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input/train/syn/*")
-inputs_valid = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input/validation/syn/*")
+inputs_train = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input_png/train/syn/*")
+inputs_valid = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input_png/validation/syn/*")
 
-masks_train = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input/train/label/*")
-masks_valid = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input/validation/label/*")
+masks_train = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input_png/train/label/*")
+masks_valid = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input_png/validation/label/*")
 
 
 def mask2rgb(mask):
@@ -189,4 +189,4 @@ model.compile(loss=[weighted_categorical_crossentropy([0.4, 0.5, 0.1])],
 
 model.fit(x=X_train, y=y_train, epochs=15, batch_size=16, validation_data=(X_valid, y_valid))
 
-model.save('FCN/models/fcnn_my_jpg_png.h5')
+model.save('FCN/models/fcnn_my_png.h5')
