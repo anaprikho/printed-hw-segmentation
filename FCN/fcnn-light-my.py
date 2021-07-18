@@ -11,13 +11,13 @@ from fcn_helper_function import *
 from img_utils import getbinim
 import pickle
 import cv2
+import pandas as pd
 
 """
 This file defines the model fcn-light-2. It is a fully convolutional model based on the FCN-8 architecture
 """
 
-# import warnings
-# warnings.filterwarnings("ignore", message=r"Passing",category=FutureWarning)
+
 np.random.seed(123)
 '''
 
@@ -37,16 +37,16 @@ print("Reading images...")
 # path = os.getcwd()
 # os.chdir('../')
 
-inputs_train = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input_png/train/syn/*")
-inputs_valid = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input_png/validation/syn/*")
+inputs_train = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/cvl_jottueset/model_input/train/syn/*")
+inputs_valid = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/cvl_jottueset/model_input/validation/syn/*")
 
-masks_train = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input_png/train/label/*")
-masks_valid = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/FINAL/merged_model_input_png/validation/label/*")
+masks_train = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/cvl_jottueset/model_input/train/label/*")
+masks_valid = io.imread_collection("C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/cvl_jottueset/model_input/validation/label/*")
 
 
 def mask2rgb(mask):
     # print(mask)
-    result = np.zeros((mask.shape))  # crestin a blank black mask with shape = 3: ...[0. 0. 0.]...
+    result = np.zeros((mask.shape))  # create a blank black mask with shape = 3: ...[0. 0. 0.]...
     # print(result)
     result[:, :][np.where((mask[:, :] == [255, 0, 0]).all(axis=2))] = [1, 0, 0]  # red where input image pixels are ??? (machine-printed)
     result[:, :][np.where((mask[:, :] == [0, 255, 0]).all(axis=2))] = [0, 1, 0]  # green where was yellow (handwritten)
@@ -181,12 +181,28 @@ def FCN(nClasses, input_height=256, input_width=256):
 model = FCN(nClasses=3,
             input_height=256,
             input_width=256)
+
+from contextlib import redirect_stdout
+
+with open('modelsummary.txt', 'w') as f:
+    with redirect_stdout(f):
+        model.summary()
+
 print(model.summary())
 
 model.compile(loss=[weighted_categorical_crossentropy([0.4, 0.5, 0.1])],
               optimizer='adam',
               metrics=[IoU])
 
-model.fit(x=X_train, y=y_train, epochs=15, batch_size=16, validation_data=(X_valid, y_valid))
+history = model.fit(x=X_train, y=y_train, epochs=15, batch_size=16, validation_data=(X_valid, y_valid))
 
-model.save('FCN/models/fcnn_my_png.h5')
+hist_df = pd.DataFrame(history.history)
+hist_json_file = 'history.json'
+with open(hist_json_file, mode='w') as f:
+    hist_df.to_json(f)
+
+hist_csv_file = 'history.csv'
+with open(hist_csv_file, mode='w') as f:
+    hist_df.to_csv(f)
+
+model.save('FCN/models/fcnn_cvl_jottueset.h5')
