@@ -10,7 +10,7 @@ import warnings
 import numpy as np
 import skimage.io as io
 from fcn_helper_function import weighted_categorical_crossentropy, IoU
-from img_utils import max_rgb_filter, get_IoU, getBinclassImg, mask2rgb, rgb2mask
+from img_utils import max_rgb_filter, get_IoU, getBinclassImg, mask2rgb, rgb2mask, getbinim
 from keras.engine.saving import load_model
 from post import crf
 from skimage import img_as_float
@@ -28,16 +28,17 @@ def classify(imgdb):
     result_imgs = []
     print("classifying " + str(len(imgdb)) + ' images')
     for image in imgdb:
-        model = load_model('models/fcnn_bin_simple.h5', custom_objects={
+        model = load_model('models/fcnn_wgm_png.h5', custom_objects={
             'loss': weighted_categorical_crossentropy([0.4, 0.5, 0.1]), 'IoU': IoU})
         orgim = np.copy(image)
         # assume image in binary
-        image = img_as_float(gray2rgb(image))
+        image = img_as_float(gray2rgb(getbinim(image)))
         maskw = int((np.ceil(image.shape[1] / BOXWDITH) * BOXWDITH)) + 1
         maskh = int((np.ceil(image.shape[0] / BOXWDITH) * BOXWDITH))
         mask = np.ones((maskh, maskw, 3))
         mask2 = np.zeros((maskh, maskw, 3))
         mask[0:image.shape[0], 0:image.shape[1]] = image
+        print("going into the 1st for-loop...")
         for y in tqdm(range(0, mask.shape[0], STRIDE), unit='batch'):
             x = 0
             if (y + BOXWDITH > mask.shape[0]):
@@ -50,22 +51,26 @@ def classify(imgdb):
                     np.array([(input - mean) / std]))[0]
                 x = x + STRIDE
         result_imgs.append(mask2[0:image.shape[0], 0:image.shape[1]])
+        print("end of the 1st for-loop...")
+    print("result_imgs: ", result_imgs)
     return result_imgs
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("ground_truth_folder", help="ground truth folder")
-    parser.add_argument("test_folder", help="test folder")
+    parser.add_argument('-label', "--ground_truth_folder", help="ground truth folder")
+    parser.add_argument('-syn', "--test_folder", help="test folder")
     args = parser.parse_args()
 
     image_col = io.imread_collection(args.test_folder + '*')
     mask_col = io.imread_collection(args.ground_truth_folder + '*')
-    crf_orgim = io.imread_collection(mask_col + 'crf-orgim/*')
+    # crf_orgim = io.imread_collection('C:/Users/prikha/Downloads/BA/Datasets/printed-hw-seg/printed-hw-seg_test/test/' + 'crf-orgim/*')
     out_raw = classify(image_col)
-    out_crf = [crf(inim, outim) for inim, outim in zip(crf_orgim, out_raw)]
+    print("end of classifying...")
+    out_crf = [crf(inim, outim) for inim, outim in zip(image_col, out_raw)]
+    print("after out_crf...")
 
-    results_folder = 'test_out/'
+    results_folder = 'C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/wgm/FINAL/merged_model_input_png/test/test_out/'
 
     IoUs_hw_old = []
     IoUs_hw_new = []
@@ -76,16 +81,23 @@ if __name__ == "__main__":
     IoUs_mean_old = []
     IoUs_mean_new = []
 
+    # print(f'out_raw: {out_raw}')
+    # print(f'out_crf: {out_crf}')
+    # print(f'mask_col: {mask_col}')
     for i, (out, crf_res, gt) in enumerate(zip(out_raw, out_crf, mask_col)):
+        print('inside of the 2nd for-loop...')
         IoU_printed_old = get_IoU(getBinclassImg(1, rgb2mask(max_rgb_filter(out))), getBinclassImg(1, gt))
         IoU_hw_old = get_IoU(getBinclassImg(2, rgb2mask(max_rgb_filter(out))), getBinclassImg(2, gt))
         IoU_bg_old = get_IoU(getBinclassImg(3, rgb2mask(max_rgb_filter(out))), getBinclassImg(3, gt))
         IoU_mean_old = np.array([IoU_printed_old, IoU_hw_old, IoU_bg_old]).mean()
 
+        # try:
         IoU_printed_new = get_IoU(getBinclassImg(1, crf_res), getBinclassImg(1, gt))
         IoU_hw_new = get_IoU(getBinclassImg(2, crf_res), getBinclassImg(2, gt))
         IoU_bg_new = get_IoU(getBinclassImg(3, crf_res), getBinclassImg(3, gt))
         IoU_mean_new = np.array([IoU_printed_new, IoU_hw_new, IoU_bg_new]).mean()
+        # except ZeroDivisionError:
+        #     print('Cannot devide by zero.')
 
         IoUs_hw_old.append(IoU_hw_old)
         IoUs_hw_new.append(IoU_hw_new)
