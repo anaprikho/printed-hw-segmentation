@@ -1,0 +1,661 @@
+{
+    "name": "wgm_photo_104",
+    "securityToken": "wgm_photo_104 Token",
+    "sourceConnection": {
+        "name": "wgm_subset input ",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMWJjMTdhMGQ3MWJlYjlhOGE4NTI5YWMwYmQzMzRjNTIxZTQ1MjNmY2Y4OWEwZGE5MDhhYjEwY2NlNGNhN2FhOGY0MDFhMjEwMWM0NDFlYjVmOTAzY2IxMmJmNmNjZjRiN2Y5ZjZjODk5NmZmMWY5ZDRhNzRlZDU4MWY5Y2Q2ZGI1YTYyYTUyM2ZiMzIyZTkxNWE2NGI0MDBlMDYwZTA5NzFhNzgwMjc5NjY0ZTliYzQwYmU3M2VjMDRiMGFlYWY4NGZlNjlhOTliMDNkYjAzYjRkNmIxNTQ2YmRiNDgxNWQiLCJpdiI6ImEwNWU1OTcwZDI4MGM1NmE5MDhlZDk3NjliYmI5YWMzYmEyZDliYjc5YzE0NDg1YyJ9"
+        },
+        "id": "aCoU9rHZf"
+    },
+    "targetConnection": {
+        "name": "wgm_subset output ",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYzVlMjA4NjhlZDI3MDRkYTBjMjQ0NjAzNTk2MTFlOTQ4N2I0YWJiZDFmYTNkOTlkMzMxNzIyMWQ3ZTliOWI2ZTJjZjJiMGQwYWE3NWU5ZjU1MTljY2Q3ZGZjNjQ2YWEyYjkxOGViZTM4ZmIyZGM2YzkwZmRiZjVhZmE2MmQ1ODkyMGQ3OGI5MjcyYzY4MGViODY4NTgzMzdjOWIzYjk2ZTljM2Q1OGI1ODE4M2RkNjQxMTYxZjMxNzIwOTdjMTQ2OGM1MGYzZTU2ZjdiOTkzYjZkODFmMmM0MjE1Yjc5OGM1NGMyNTA0ZmVlZjgyYjM4YzgwMTRmOTJmNTI2YWRhOSIsIml2IjoiYTdjNzEwYTQ2OTMxMTA1MWI2ZjQ2ZmIyNjBlZGZhNzMzY2E0ODZmN2E2MzU5Njk3In0="
+        },
+        "id": "yCt0MkJqe"
+    },
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "stamp",
+            "color": "#5db300"
+        },
+        {
+            "name": "signature",
+            "color": "#e81123"
+        },
+        {
+            "name": "handwritten",
+            "color": "#6917aa"
+        },
+        {
+            "name": "machineprinted",
+            "color": "#015cda"
+        },
+        {
+            "name": "mixed",
+            "color": "#4894fe"
+        }
+    ],
+    "id": "06Bj3_EB5",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "exportFormat": {
+        "providerType": "vottJson",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZTdmMWE3YjNjMWU0ZjA2ZDRmYTU5Y2M0ZGZiMTM3MDU5YjBlNmMxODNmY2Q3MTg5NmJkODU5YjEyZGIwNzM3YWFkNzFlNDA3ZGMxMTk3YmFmODhhMjBiN2U4NjYzNmY1IiwiaXYiOiI2YmYxY2JiZjU0MTNiYjdkNDk1NWY5M2E0YWRmMjFkYzZiNzM1YzYyYjA2Mzc4MTcifQ=="
+        }
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "1b78cf30be11a63ba0ec897d7b4ad9dd",
+    "assets": {
+        "f6f68700fe47f662a6ef4e27ef7350bf": {
+            "format": "jpg",
+            "id": "f6f68700fe47f662a6ef4e27ef7350bf",
+            "name": "StAF%20F%20196-1_104_0001.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0001.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2406
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f962de223a61c22bd63e73cb31f1b846": {
+            "format": "jpg",
+            "id": "f962de223a61c22bd63e73cb31f1b846",
+            "name": "StAF%20F%20196-1_104_0011.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0011.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2294
+            },
+            "state": 2,
+            "type": 1
+        },
+        "70a033daab04503bbdee4467bb6c7d39": {
+            "format": "jpg",
+            "id": "70a033daab04503bbdee4467bb6c7d39",
+            "name": "StAF%20F%20196-1_104_0012.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0012.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2275
+            },
+            "state": 2,
+            "type": 1
+        },
+        "52e1688c71adab5235d7440e8b50f8b3": {
+            "format": "jpg",
+            "id": "52e1688c71adab5235d7440e8b50f8b3",
+            "name": "StAF%20F%20196-1_104_0013.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0013.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e311c8a45df477559e5ec1c101f6eefd": {
+            "format": "jpg",
+            "id": "e311c8a45df477559e5ec1c101f6eefd",
+            "name": "StAF%20F%20196-1_104_0014.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0014.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "92bc260461d3bc0bf051ffc2cb4265ac": {
+            "format": "jpg",
+            "id": "92bc260461d3bc0bf051ffc2cb4265ac",
+            "name": "StAF%20F%20196-1_104_0015.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0015.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "68f1719823b913cc62e194a716d69278": {
+            "format": "jpg",
+            "id": "68f1719823b913cc62e194a716d69278",
+            "name": "StAF%20F%20196-1_104_0016.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0016.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a7a0097c30c8c16496deb765234fd222": {
+            "format": "jpg",
+            "id": "a7a0097c30c8c16496deb765234fd222",
+            "name": "StAF%20F%20196-1_104_0017.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0017.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f7088a35b59e4c10370a5c41ba1726d1": {
+            "format": "jpg",
+            "id": "f7088a35b59e4c10370a5c41ba1726d1",
+            "name": "StAF%20F%20196-1_104_0018.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0018.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8777d520f410ed71e7e655cac9255797": {
+            "format": "jpg",
+            "id": "8777d520f410ed71e7e655cac9255797",
+            "name": "StAF%20F%20196-1_104_0019.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0019.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5221fd3c38e7cead30a4abbbd6f31ee5": {
+            "format": "jpg",
+            "id": "5221fd3c38e7cead30a4abbbd6f31ee5",
+            "name": "StAF%20F%20196-1_104_0020.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0020.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5f43517ecaa559a51b31d84686dd5f3e": {
+            "format": "jpg",
+            "id": "5f43517ecaa559a51b31d84686dd5f3e",
+            "name": "StAF%20F%20196-1_104_0021.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0021.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "343de222b9520888f87f637ec3385ef6": {
+            "format": "jpg",
+            "id": "343de222b9520888f87f637ec3385ef6",
+            "name": "StAF%20F%20196-1_104_0022.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0022.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1b78cf30be11a63ba0ec897d7b4ad9dd": {
+            "format": "jpg",
+            "id": "1b78cf30be11a63ba0ec897d7b4ad9dd",
+            "name": "StAF%20F%20196-1_104_0023.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0023.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "9dd81b05eeb7afbbf03418f4e151cc98": {
+            "format": "jpg",
+            "id": "9dd81b05eeb7afbbf03418f4e151cc98",
+            "name": "StAF%20F%20196-1_104_0024.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0024.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "91919a8ddd71b0ba4e4cdf3f77af3867": {
+            "format": "jpg",
+            "id": "91919a8ddd71b0ba4e4cdf3f77af3867",
+            "name": "StAF%20F%20196-1_104_0025.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0025.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2595
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d985f74f952497d0ccd51d71e5870f22": {
+            "format": "jpg",
+            "id": "d985f74f952497d0ccd51d71e5870f22",
+            "name": "StAF%20F%20196-1_104_0026.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0026.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2602
+            },
+            "state": 2,
+            "type": 1
+        },
+        "53a09ec7ed8e24237e27dfbd0de9fac0": {
+            "format": "jpg",
+            "id": "53a09ec7ed8e24237e27dfbd0de9fac0",
+            "name": "StAF%20F%20196-1_104_0027.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0027.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5ba99fe6ab6c78794c07f9b7606b8231": {
+            "format": "jpg",
+            "id": "5ba99fe6ab6c78794c07f9b7606b8231",
+            "name": "StAF%20F%20196-1_104_0028.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0028.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2313
+            },
+            "state": 2,
+            "type": 1
+        },
+        "634ca7913d9d240544cc772d521f3619": {
+            "format": "jpg",
+            "id": "634ca7913d9d240544cc772d521f3619",
+            "name": "StAF%20F%20196-1_104_0029.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0029.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2628
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a0047e9f8cc1766a07fdadd17b75caf5": {
+            "format": "jpg",
+            "id": "a0047e9f8cc1766a07fdadd17b75caf5",
+            "name": "StAF%20F%20196-1_104_0030.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0030.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2648
+            },
+            "state": 2,
+            "type": 1
+        },
+        "dd54705290a7116e379b89ab3b92fe74": {
+            "format": "jpg",
+            "id": "dd54705290a7116e379b89ab3b92fe74",
+            "name": "StAF%20F%20196-1_104_0031.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0031.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "92516b089f1e61ec77e1f48d0d0a52c2": {
+            "format": "jpg",
+            "id": "92516b089f1e61ec77e1f48d0d0a52c2",
+            "name": "StAF%20F%20196-1_104_0032.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0032.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0ec33ccc8c6a72fefa3d0cdf271757ee": {
+            "format": "jpg",
+            "id": "0ec33ccc8c6a72fefa3d0cdf271757ee",
+            "name": "StAF%20F%20196-1_104_0033.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0033.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e04c2db8439138c7e2a86ce87769870d": {
+            "format": "jpg",
+            "id": "e04c2db8439138c7e2a86ce87769870d",
+            "name": "StAF%20F%20196-1_104_0034.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0034.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "18acbf15204e543353e1bff0d14597c2": {
+            "format": "jpg",
+            "id": "18acbf15204e543353e1bff0d14597c2",
+            "name": "StAF%20F%20196-1_104_0035.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0035.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "958dadebe63e641b2f1b2fcfe17a0861": {
+            "format": "jpg",
+            "id": "958dadebe63e641b2f1b2fcfe17a0861",
+            "name": "StAF%20F%20196-1_104_0036.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0036.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "918b794e7344498403d975c21891be8a": {
+            "format": "jpg",
+            "id": "918b794e7344498403d975c21891be8a",
+            "name": "StAF%20F%20196-1_104_0037.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0037.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4359d89237267ea61a5dfbc867651630": {
+            "format": "jpg",
+            "id": "4359d89237267ea61a5dfbc867651630",
+            "name": "StAF%20F%20196-1_104_0038.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0038.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "dd0f18e11682d25b6ed7683df89ba1bf": {
+            "format": "jpg",
+            "id": "dd0f18e11682d25b6ed7683df89ba1bf",
+            "name": "StAF%20F%20196-1_104_0039.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0039.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e38caf6927a3d0c5856c614866698453": {
+            "format": "jpg",
+            "id": "e38caf6927a3d0c5856c614866698453",
+            "name": "StAF%20F%20196-1_104_0040.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0040.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "30d249485fcecd9f7d6eb23913e704c0": {
+            "format": "jpg",
+            "id": "30d249485fcecd9f7d6eb23913e704c0",
+            "name": "StAF%20F%20196-1_104_0041.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0041.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d8498f3b16ff87aa8ca2d73239e0886b": {
+            "format": "jpg",
+            "id": "d8498f3b16ff87aa8ca2d73239e0886b",
+            "name": "StAF%20F%20196-1_104_0042.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0042.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c01d4249a144433dd2ee333430dcf815": {
+            "format": "jpg",
+            "id": "c01d4249a144433dd2ee333430dcf815",
+            "name": "StAF%20F%20196-1_104_0043.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0043.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2237
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a915f0ed33183b2bc23e94ceeadb3730": {
+            "format": "jpg",
+            "id": "a915f0ed33183b2bc23e94ceeadb3730",
+            "name": "StAF%20F%20196-1_104_0044.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0044.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2305
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8e63539b7cb1b53eec7f5fa01a1ab943": {
+            "format": "jpg",
+            "id": "8e63539b7cb1b53eec7f5fa01a1ab943",
+            "name": "StAF%20F%20196-1_104_0045.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0045.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2305
+            },
+            "state": 2,
+            "type": 1
+        },
+        "03f12b99b22af68b0c3767531a8faf03": {
+            "format": "jpg",
+            "id": "03f12b99b22af68b0c3767531a8faf03",
+            "name": "StAF%20F%20196-1_104_0046.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0046.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2305
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b86b6fd33232b4204ac6d47c9754fe41": {
+            "format": "jpg",
+            "id": "b86b6fd33232b4204ac6d47c9754fe41",
+            "name": "StAF%20F%20196-1_104_0047.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0047.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2305
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b176f7bb7f5c079fffa364ab6e751aac": {
+            "format": "jpg",
+            "id": "b176f7bb7f5c079fffa364ab6e751aac",
+            "name": "StAF%20F%20196-1_104_0048.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0048.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2305
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c67c054a82789a05098e7322f921f69c": {
+            "format": "jpg",
+            "id": "c67c054a82789a05098e7322f921f69c",
+            "name": "StAF%20F%20196-1_104_0049.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0049.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2305
+            },
+            "state": 2,
+            "type": 1
+        },
+        "503d971c99139fa471be387f21b229a3": {
+            "format": "jpg",
+            "id": "503d971c99139fa471be387f21b229a3",
+            "name": "StAF%20F%20196-1_104_0050.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0050.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2305
+            },
+            "state": 2,
+            "type": 1
+        },
+        "7e64e99509f687ecda0f1ee8e704c206": {
+            "format": "jpg",
+            "id": "7e64e99509f687ecda0f1ee8e704c206",
+            "name": "StAF%20F%20196-1_104_0002.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0002.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2406
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2ab6b55f1108a39fce0f844356270aa0": {
+            "format": "jpg",
+            "id": "2ab6b55f1108a39fce0f844356270aa0",
+            "name": "StAF%20F%20196-1_104_0003.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0003.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2366
+            },
+            "state": 2,
+            "type": 1
+        },
+        "195606f1a3da5e3dbd93ae0289e407b1": {
+            "format": "jpg",
+            "id": "195606f1a3da5e3dbd93ae0289e407b1",
+            "name": "StAF%20F%20196-1_104_0009.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0009.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2286
+            },
+            "state": 2,
+            "type": 1
+        },
+        "15b1f1522758396c8e369eb9415bd5f4": {
+            "format": "jpg",
+            "id": "15b1f1522758396c8e369eb9415bd5f4",
+            "name": "StAF%20F%20196-1_104_0004.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0004.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2356
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f4d825ca5d28e253fe338bfef6cb2358": {
+            "format": "jpg",
+            "id": "f4d825ca5d28e253fe338bfef6cb2358",
+            "name": "StAF%20F%20196-1_104_0005.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0005.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2356
+            },
+            "state": 2,
+            "type": 1
+        },
+        "19cfb96b2839eb9b420c6bf23e23b470": {
+            "format": "jpg",
+            "id": "19cfb96b2839eb9b420c6bf23e23b470",
+            "name": "StAF%20F%20196-1_104_0006.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0006.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2356
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c8f01cb7853c2a9204f762d3542941a7": {
+            "format": "jpg",
+            "id": "c8f01cb7853c2a9204f762d3542941a7",
+            "name": "StAF%20F%20196-1_104_0007.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0007.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2293
+            },
+            "state": 2,
+            "type": 1
+        },
+        "81377082d383b79f0dce9801dbb19846": {
+            "format": "jpg",
+            "id": "81377082d383b79f0dce9801dbb19846",
+            "name": "StAF%20F%20196-1_104_0008.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0008.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2289
+            },
+            "state": 2,
+            "type": 1
+        },
+        "087471d1b4e9247c10131b08b303a824": {
+            "format": "jpg",
+            "id": "087471d1b4e9247c10131b08b303a824",
+            "name": "StAF%20F%20196-1_104_0010.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/photo/StAFF%20F%20196-10/104/StAF%20F%20196-1_104_0010.jpg",
+            "size": {
+                "width": 3200,
+                "height": 2268
+            },
+            "state": 2,
+            "type": 1
+        }
+    }
+}

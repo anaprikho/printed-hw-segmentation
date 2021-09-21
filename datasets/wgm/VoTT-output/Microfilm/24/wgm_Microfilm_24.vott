@@ -1,0 +1,325 @@
+{
+    "name": "wgm_Microfilm_24",
+    "securityToken": "wgm_Microfilm_24 Token",
+    "sourceConnection": {
+        "name": "wgm_subset input ",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiM2RkZDJiOGI2NGU3MWJlN2JjNTRjNTIxYTQyOGZiMGRmM2JjZjlkN2NkZTgxYzk4ODcyZmEzYjljYmZlYjQzZjFjOGViOTAzODcxZDhlOGMwM2RjM2FlMjcyOWNlZDkzZTQ5ZWQ0OWUwYzZlNzNjMjNkZTc5NzBhYWM5N2Q4MzRhOTk4MjM1MzdlNTEyZWY0NTUzMWE4NGU5NTJjZTdmNmIxZGI4ODI0MWQ4YTJmMWQxODU5ZTNlYWUyOWI1MDNjNDYzODllODgxNmIwYTUyOTVmMmMxMjQ5MmRiNjlhYzYiLCJpdiI6IjhmYjNiZDllYjFmZjFlOTlhMTc0YWE2ZDlkZTQwNzcyOWNmY2Y3YWY3MDljNGZmNSJ9"
+        },
+        "id": "aCoU9rHZf"
+    },
+    "targetConnection": {
+        "name": "wgm_subset output ",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiOTAwYTZmYTY2N2QyNTVmMjk3MGU3NmU1OGExZmZlNTNjNmZjNWRiOGYwYzAxNjcwNTMzYWYyMjE0NTE4NjgwZWYzNjQxYmJiNmVkYzg0ZjQ5ODkxYTQ4ZTg0OGQyZWRmMmIzYzQ2ODM5YTliYmFkNzg5YTgzNDIwMTk3OWUwZmY0ZDc1MDJhZDY4MDk2Y2EyZDhkYWJjZDQ0OTFiNTZkNjFmNTI4ZGQ1ZWFmYjkwOGI1MGFiYWY5ODk3Y2U4Y2FlNjIzOTc3M2VjOGUwZWZjY2U5Njg2ODMxODYzMGM1NzgiLCJpdiI6IjY3NmFhMDNhMzI3MzgyODFiMGMyY2I3OGEyOWMwYzdmYThmODdmOTZjYmJjZTE0YiJ9"
+        },
+        "id": "yCt0MkJqe"
+    },
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "stamp",
+            "color": "#5db300"
+        },
+        {
+            "name": "signature",
+            "color": "#e81123"
+        },
+        {
+            "name": "handwritten",
+            "color": "#6917aa"
+        },
+        {
+            "name": "machineprinted",
+            "color": "#015cda"
+        },
+        {
+            "name": "mixed",
+            "color": "#4894fe"
+        }
+    ],
+    "id": "uD3RnQqmy",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "exportFormat": {
+        "providerType": "vottJson",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiY2Q5MmExN2ZiNGRiZjU4ZjcwZjY3ZmMyNzBiYjVkOTU2MThmMTY5Yzc1Mjc0NDgwYTc3YmRmMmMxZjYwNTk5YmZlNzgwZDFjMzkyYTc0MjJlYWNiZTU4NmQxZDgzZmNhIiwiaXYiOiJjMDg3MjMxOTJkNTBkMzM1MzEwZWNjZjg5YzdmNDlmMmI1OWExMGM0NTQ1NDFjMTQifQ=="
+        }
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "5b622874f7456fa869ba4ea951c8a680",
+    "assets": {
+        "99a142223d0edd3a77429739fbbfb01c": {
+            "format": "jpg",
+            "id": "99a142223d0edd3a77429739fbbfb01c",
+            "name": "480_24_00001.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00001.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4936
+            },
+            "state": 1,
+            "type": 1
+        },
+        "f0f1ee3b8916de3582afc1b8950853c5": {
+            "format": "jpg",
+            "id": "f0f1ee3b8916de3582afc1b8950853c5",
+            "name": "480_24_00002.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00002.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4892
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e7e2be2e5220fe6787bed3b7adfcc89e": {
+            "format": "jpg",
+            "id": "e7e2be2e5220fe6787bed3b7adfcc89e",
+            "name": "480_24_00003.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00003.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4892
+            },
+            "state": 2,
+            "type": 1
+        },
+        "495076425f06b4486381cb8c553f2c84": {
+            "format": "jpg",
+            "id": "495076425f06b4486381cb8c553f2c84",
+            "name": "480_24_00004.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00004.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4876
+            },
+            "state": 2,
+            "type": 1
+        },
+        "67368166ce0f9fc4c874751ccf26b62b": {
+            "format": "jpg",
+            "id": "67368166ce0f9fc4c874751ccf26b62b",
+            "name": "480_24_00005.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00005.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4892
+            },
+            "state": 2,
+            "type": 1
+        },
+        "16102e4f0e75559eb05433c2047b4b68": {
+            "format": "jpg",
+            "id": "16102e4f0e75559eb05433c2047b4b68",
+            "name": "480_24_00006.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00006.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4876
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5b622874f7456fa869ba4ea951c8a680": {
+            "format": "jpg",
+            "id": "5b622874f7456fa869ba4ea951c8a680",
+            "name": "480_24_00007.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00007.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4892
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e7dc35d6071815a1d707800c27a855f6": {
+            "format": "jpg",
+            "id": "e7dc35d6071815a1d707800c27a855f6",
+            "name": "480_24_00008.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00008.jpg",
+            "size": {
+                "width": 5860,
+                "height": 4876
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d583ecf81d9142b7a8253fbb9e966cb8": {
+            "format": "jpg",
+            "id": "d583ecf81d9142b7a8253fbb9e966cb8",
+            "name": "480_24_00009.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00009.jpg",
+            "size": {
+                "width": 5860,
+                "height": 4968
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a659c39934813cd638c8523f0514a775": {
+            "format": "jpg",
+            "id": "a659c39934813cd638c8523f0514a775",
+            "name": "480_24_00010.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00010.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4779
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e9fa2a1f3d2ed49c8230c919af41c2f5": {
+            "format": "jpg",
+            "id": "e9fa2a1f3d2ed49c8230c919af41c2f5",
+            "name": "480_24_00011.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00011.jpg",
+            "size": {
+                "width": 5814,
+                "height": 4968
+            },
+            "state": 2,
+            "type": 1
+        },
+        "72983d4e42560ceb09661418b5f4dae1": {
+            "format": "jpg",
+            "id": "72983d4e42560ceb09661418b5f4dae1",
+            "name": "480_24_00012.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00012.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4968
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4e92ef29c4a55329d0f89bc9aab45dc5": {
+            "format": "jpg",
+            "id": "4e92ef29c4a55329d0f89bc9aab45dc5",
+            "name": "480_24_00013.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00013.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4862
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c0335d1001cbe28709e3ab0232d523e3": {
+            "format": "jpg",
+            "id": "c0335d1001cbe28709e3ab0232d523e3",
+            "name": "480_24_00014.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00014.jpg",
+            "size": {
+                "width": 5828,
+                "height": 4846
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2b7c589b44b02f96a6a374f6ce6f2dd3": {
+            "format": "jpg",
+            "id": "2b7c589b44b02f96a6a374f6ce6f2dd3",
+            "name": "480_24_00015.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00015.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4846
+            },
+            "state": 2,
+            "type": 1
+        },
+        "839dbe84e36e9b7db5c0fcd8777a1fa1": {
+            "format": "jpg",
+            "id": "839dbe84e36e9b7db5c0fcd8777a1fa1",
+            "name": "480_24_00016.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00016.jpg",
+            "size": {
+                "width": 5860,
+                "height": 4862
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3848cd8dab5c4091d3ede02d8f773479": {
+            "format": "jpg",
+            "id": "3848cd8dab5c4091d3ede02d8f773479",
+            "name": "480_24_00017.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00017.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4846
+            },
+            "state": 2,
+            "type": 1
+        },
+        "99dc76c074a5d58a0ab3ae6a93fe0a36": {
+            "format": "jpg",
+            "id": "99dc76c074a5d58a0ab3ae6a93fe0a36",
+            "name": "480_24_00018.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00018.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4846
+            },
+            "state": 1,
+            "type": 1
+        },
+        "be0dada7c963827b72d64ea20639a433": {
+            "format": "jpg",
+            "id": "be0dada7c963827b72d64ea20639a433",
+            "name": "480_24_00019.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00019.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4846
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ed3caec538589f2479c3e556fa87c60d": {
+            "format": "jpg",
+            "id": "ed3caec538589f2479c3e556fa87c60d",
+            "name": "480_24_00020.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00020.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4830
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3e004b7dea9706e6ad4ba74a977e5b8a": {
+            "format": "jpg",
+            "id": "3e004b7dea9706e6ad4ba74a977e5b8a",
+            "name": "480_24_00021.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00021.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4846
+            },
+            "state": 2,
+            "type": 1
+        },
+        "04f5e68efd7d841365b78151e93ce41e": {
+            "format": "jpg",
+            "id": "04f5e68efd7d841365b78151e93ce41e",
+            "name": "480_24_00022.jpg",
+            "path": "file:C:/Users/prikha/Downloads/BA/Datasets/wgm-subset/Microfilm/GLAK%20480/24/480_24_00022.jpg",
+            "size": {
+                "width": 5844,
+                "height": 4846
+            },
+            "state": 2,
+            "type": 1
+        }
+    }
+}
