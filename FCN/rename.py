@@ -24,6 +24,7 @@ SAVE_DIR = 'C:/Users/prikha/Downloads/BA/Datasets/CVL_pages/cropps/'
 
 img_collection = glob.glob('C:/Users/prikha/Downloads/BA/Datasets/CVL_pages/pages_hw/*')
 
+
 def convert2png():
     for count, file in enumerate(os.listdir(SOURCE)):
         filename, extension = splitext(file)
@@ -34,6 +35,7 @@ def convert2png():
         os.rename(os.path.join(SOURCE, file), os.path.join(SAVE_DIR, dst))
     # print(len(os.listdir(SOURCE)))
 
+
 def data_generation():
     xml_files = os.listdir(XML_DATA_PATH)
     for xml, img in zip(xml_files, img_collection):
@@ -43,15 +45,13 @@ def data_generation():
         print('===================================')
 
 
-
-def cropp_cvl(image, ground_truth, name, y_up=2215+570):
+def cropp_cvl(image, ground_truth, name, y_up=2215 + 570):
     print(image)
     try:
         doc = xmltodict.parse(ground_truth.read())
     except ExpatError:
         print('XML file malformated: ' + name + '.xml' + ' skipping..')
         return
-
 
     y = int(doc['PcGts']['Page']['dkTextLines']['@cropY'])
     h = int(doc['PcGts']['Page']['dkTextLines']['@cropH'])
@@ -66,13 +66,13 @@ def cropp_cvl(image, ground_truth, name, y_up=2215+570):
     # pil_image = Image.fromarray(color_coverted)
     # img = Image.open(pil_image)
 
-    img_cropped = img[y+200:h, :]
+    img_cropped = img[y + 200:h, :]
     # if dist2 > 540:
     #     img_cropped = img[y+400:y_up, :]
     # else:
     #     img_cropped = img[y+dist2:y_up, :]
     print(img_cropped.size)
-#     cv2.imwrite("C:/Users/prikha/Downloads/BA/Datasets/CVL_pages/cropps/' + name + '_cropped_hw.png", img_cropped)
+    #     cv2.imwrite("C:/Users/prikha/Downloads/BA/Datasets/CVL_pages/cropps/' + name + '_cropped_hw.png", img_cropped)
     # color_coverted = cv2.cvtColor(img_cropped, cv2.COLOR_BGR2RGB)
     # pil_image = Image.fromarray(color_coverted)
 
@@ -83,16 +83,40 @@ def cropp_cvl(image, ground_truth, name, y_up=2215+570):
 
 
 def select_img():
+    im_path = 'D:/Uni/BA/Datasets/IAM/USED/E-H/crops/'
+    save_path = 'D:/Uni/BA/Datasets/IAM/USED/E-H/crops_removed/'
+
+    names_dir = 'D:/Uni/BA/Datasets/IAM/USED/E-H/gt_removed/'
+
+    files = os.listdir(names_dir)
+    i = 0
+    for file in files:
+        filename, extension = splitext(file)
+        print(filename)
+        # dst = filename + '.png'
+        # os.rename(os.path.join(im_path, file), os.path.join(save_path, dst))
+        i = i + 1
+
+    print(i)
+
+def select_img_rand():
+    """
+    Select randomly image files (syn) and their pixel-wise annotations (label) and move them to another paths. This
+    function was used by splitting data into training, evaluation and test subsets.
+    """
+
     path_syn = 'C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/cvl_jottueset/syn'
     save_dir_syn = 'C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/cvl_jottueset/model_input/test/syn'
 
     path_label = 'C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/cvl_jottueset/label'
     save_dir_label = 'C:/Users/prikha/Downloads/BA/Datasets/HTSNet_data_synthesis/cvl_jottueset/model_input/test/label'
 
+    num = 1704  # number of files to be moved
+
     files = os.listdir(path_syn)
     print(len(files))
 
-    sampled_list = random.sample(files, 1704)
+    sampled_list = random.sample(files, num)
     print(len(sampled_list))
 
     for count, file in enumerate(sampled_list):
@@ -107,4 +131,5 @@ def select_img():
 if __name__ == '__main__':
     # convert2png()
     # data_generation()
+    # select_img_rand()
     select_img()
