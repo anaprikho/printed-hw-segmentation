@@ -175,13 +175,10 @@ model.compile(loss=[weighted_categorical_crossentropy([0.4, 0.5, 0.1])],
 
 history = model.fit(x=X_train, y=y_train, epochs=15, batch_size=16, validation_data=(X_valid, y_valid))
 
+# save history
 hist_df = pd.DataFrame(history.history)
-hist_json_file = 'history_fcnn_wgm-cvl_jottueset_subset.json'
+hist_json_file = 'history.json'
 with open(hist_json_file, mode='w') as f:
     hist_df.to_json(f)
-
-# hist_csv_file = 'history.csv'
-# with open(hist_csv_file, mode='w') as f:
-#     hist_df.to_csv(f)
 
 model.save('FCN/models/fcnn_wgm-cvl_jottueset_subset.h5')
