@@ -83,18 +83,18 @@ def cropp_cvl(image, ground_truth, name, y_up=2215 + 570):
 
 
 def select_img():
-    im_path = 'D:/Uni/BA/Datasets/IAM/USED/E-H/crops/'
-    save_path = 'D:/Uni/BA/Datasets/IAM/USED/E-H/crops_removed/'
+    im_path = 'D:/Uni/BA/Datasets/IAM/USED/E-H/trash/test/crops/'
+    save_path = 'D:/Uni/BA/Datasets/IAM/USED/E-H/trash/test/crops_removed/'
 
-    names_dir = 'D:/Uni/BA/Datasets/IAM/USED/E-H/gt_removed/'
+    names_dir = 'D:/Uni/BA/Datasets/IAM/USED/E-H/trash/test/gt_removed/'
 
     files = os.listdir(names_dir)
     i = 0
     for file in files:
         filename, extension = splitext(file)
         print(filename)
-        # dst = filename + '.png'
-        # os.rename(os.path.join(im_path, file), os.path.join(save_path, dst))
+        dst = filename + '.png'
+        os.rename(os.path.join(im_path, file), os.path.join(save_path, dst))
         i = i + 1
 
     print(i)
