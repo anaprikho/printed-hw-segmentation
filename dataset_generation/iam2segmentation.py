@@ -7,11 +7,11 @@ from img_utils import *
 XML_DATA_PATH = 'D:/Uni/BA/Datasets/IAM/xml/xml'
 IM_DATA_PATH = 'D:/Uni/BA/Datasets/IAM/formsE-H/formsE-H/'
 
-IM_GT_OUT_PATH = 'D:/Uni/BA/Datasets/IAM/USED/Z/'
-IM_OUT_PATH = 'D:/Uni/BA/Datasets/IAM/USED/E-H/crops/'
+IM_GT_OUT_PATH = 'D:/Uni/BA/Datasets/IAM/USED/E-H/trash/test/gt/'
+IM_OUT_PATH = 'D:/Uni/BA/Datasets/IAM/USED/E-H/trash/test/crops/'
 
 
-def iam2segmentation(image, name, y_lo=645, y_up=2215+570):
+def iam2segmentation(image, img_name, y_lo=645, y_up=2215 + 570):
     """
     Takes an image file and its name from IAM dataset
     and outputs a cropped original image and an RGB image with pixel-wise labels:
@@ -20,7 +20,7 @@ def iam2segmentation(image, name, y_lo=645, y_up=2215+570):
     B : Background / noise
     :param y_up: end of a hw part
     :param y_lo: y coordinate of the separation line between hw and printed text parts
-    :param name: output name (without extension)
+    :param img_name: output name (without extension)
     :param image: input image file name
     :return: pixel-wise annotated image
     """
@@ -29,7 +29,7 @@ def iam2segmentation(image, name, y_lo=645, y_up=2215+570):
 
     #  crop an image
     image = image[:y_up, :]
-    io.imsave(IM_OUT_PATH + name + '.png', image)
+    io.imsave(IM_OUT_PATH + img_name + '.png', image)
 
     # binarize an image
     bin_im = getbinim(image)
@@ -59,12 +59,12 @@ def iam2segmentation(image, name, y_lo=645, y_up=2215+570):
     mask[:, :][np.where(
         (bin_im[:, :] == [0, 0, 0]).all(axis=2))] = [0, 0, 1]
 
-    io.imsave(IM_GT_OUT_PATH + name + '.png', mask)
+    io.imsave(IM_GT_OUT_PATH + img_name + '.png', mask)
 
 
 if __name__ == '__main__':
     input_files = io.imread_collection(IM_DATA_PATH + '/*')
-    names = os.listdir(IM_DATA_PATH)
+    files = os.listdir(IM_DATA_PATH)
 
     # --------------USING XML----------------
 
@@ -79,6 +79,6 @@ if __name__ == '__main__':
     # --------------USING XML----------------
 
     # Without XML by setting fixed coordinates
-    for img, file in zip(input_files, names):
-        name = os.path.splitext(file)[0]
-        iam2segmentation(img, name)
+    for img, file in zip(input_files, files):
+        img_name = os.path.splitext(file)[0]
+        iam2segmentation(img, img_name)
