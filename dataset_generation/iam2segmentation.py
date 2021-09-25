@@ -5,10 +5,10 @@ import numpy as np
 from img_utils import *
 
 XML_DATA_PATH = 'D:/Uni/BA/Datasets/IAM/xml/xml'
-IM_DATA_PATH = 'D:/Uni/BA/Datasets/IAM/formsI-Z/formsI-Z/'
+IM_DATA_PATH = 'D:/Uni/BA/Datasets/IAM/formsE-H/formsE-H/'
 
 IM_GT_OUT_PATH = 'D:/Uni/BA/Datasets/IAM/USED/Z/'
-IM_OUT_PATH = 'D:/Uni/BA/Datasets/IAM/USED/Z/crops/'
+IM_OUT_PATH = 'D:/Uni/BA/Datasets/IAM/USED/E-H/crops/'
 
 
 def iam2segmentation(image, name, y_lo=645, y_up=2215+570):
@@ -26,9 +26,12 @@ def iam2segmentation(image, name, y_lo=645, y_up=2215+570):
     """
 
     image = ndimage.filters.median_filter(image, 3)
+
+    #  crop an image
     image = image[:y_up, :]
     io.imsave(IM_OUT_PATH + name + '.png', image)
 
+    # binarize an image
     bin_im = getbinim(image)
     bin_im = gray2rgb(bin_im)
     mask = bin_im
@@ -56,7 +59,7 @@ def iam2segmentation(image, name, y_lo=645, y_up=2215+570):
     mask[:, :][np.where(
         (bin_im[:, :] == [0, 0, 0]).all(axis=2))] = [0, 0, 1]
 
-    # io.imsave(IM_GT_OUT_PATH + name + '.png', mask)
+    io.imsave(IM_GT_OUT_PATH + name + '.png', mask)
 
 
 if __name__ == '__main__':
