@@ -101,7 +101,7 @@ def select_img():
 
 def select_img_rand():
     """
-    Select randomly image files (syn) and their pixel-wise annotations (label) and move them to another paths. This
+    Randomly select image files (syn) and their pixel-wise annotations (label) and move them to another paths. This
     function was used by splitting data into training, evaluation and test subsets.
     """
 
