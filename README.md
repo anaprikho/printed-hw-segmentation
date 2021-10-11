@@ -69,3 +69,17 @@ running DIVA services.
 _disclaimer:_ The quality of the predictions depends on many factors such as input resolutions, format, colors etc. We do not claim that the models present in this repository perform universally well on all documents. The models were train, validated and tested on a private dataset.
 
 _For word level segmentation, have a look at the ``practical-word-level`` branch._
+
+## Source files used in the bachelor theisis
+
+All requirements can be found in the file `requirements.txt`.
+
+The model used in this thesis is defined in the file `fcn-light-BA.py`.
+
+The `dataset/` directory contains all data created whithin the scope of the bachelor thesis.
+
+To classify multiple images, the file `test_classifier.py` was used.
+
+The file `img_utils.py` contains image processing functions. 
+
+The function which returns a labeled image after applying CRF is defined in the file `post.py`.
