@@ -1,4 +1,4 @@
-# Source files used in the bachelor theisis
+# Files used in the bachelor theisis
 
 All requirements can be found in the file `requirements.txt`.
 
