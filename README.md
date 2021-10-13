@@ -25,7 +25,7 @@ If you make use of this work (the corresponding paper can be found [here](https:
 ![FCN resluts before and after CRF postprocessing](frontend/goodfcn.png)
 _left: input image, middle: raw FCN output, right: output after CRF postprocessing_
 
-With each release a docker image of the code is published on [docker hub](https://cloud.docker.com/repository/docker/jumpst3r/printed-hw-segmentation). This image can be used in conjuction with [DIVA services](https://github.com/lunactic/DIVAServices) to provide segmenation as a web service. It can also be used locally.
+With each release a docker image of the code is published on [docker hub](https://cloud.docker.com/repository/docker/jumpst3r/printed-hw-segmentation).
 
 ## Web service live demo
 
@@ -38,12 +38,6 @@ After pulling (`docker pull jumpst3r/printed-hw-segmentation:latest`) the image,
 `docker run -it --rm -v /FULL_PATH_TO/example.png:/input/example.png -v /FULL_PATH_TO_OUTPUT_FOLDER/:/output/ jumpst3r/printed-hw-segmentation sh /input/script.sh /input/example.png /output/`
 
 The resulting image will be saved in the output path provided by the user
-
-## Usage using the DIVA services framework
-
-Follow the guide [here](https://lunactic.github.io/DIVAServicesweb/articles/installation/) to install the DIVA services framework on a server.
-
-Once install, our method can be installed by make a POST request to the `alogithms` endpoint. This request should contain the JSON file `install.json` located in the `diva-service` folder of this repository. This will return a link pointing to the newly created method. The JSON file `upload.json` can then be run to upload an image to the server by making a request to that link. This will return an ID for the uploaded image. Finally the method can be executed using the provided ID and the JSON file `run.json` 
 
 ### Local Testing and development
 
@@ -59,24 +53,17 @@ If you want to test the performance and get IoU result metrics, you will need ac
 
 To classify single images you can use the script ``classifier_fcnn.py``, which offers a bunch of options. The release binary is a standalone version of this file.
 
-The ``fontend/`` folder contains a discontinued frontend for interations with the DIVA service framework.
-
 The ``docker/`` folder contains docker-specific files which are used to generate the docker image of the tool.
 
-The ``diva-service/`` folder contains example JSON file which can be used to deploy the method on a server
-running DIVA services.
-
 _disclaimer:_ The quality of the predictions depends on many factors such as input resolutions, format, colors etc. We do not claim that the models present in this repository perform universally well on all documents. The models were train, validated and tested on a private dataset.
-
-_For word level segmentation, have a look at the ``practical-word-level`` branch._
 
 ## Source files used in the bachelor theisis
 
 All requirements can be found in the file `requirements.txt`.
 
-The model used in this thesis is defined in the file `fcn-light-BA.py`.
+To create feature vectors from the images and subsequently create a model, the code introduced in the file `fcn-light-BA.py` was used. The models can be found in the /models directory.
 
-The `dataset/` directory contains all data created whithin the scope of the bachelor thesis.
+The `dataset/` directory contains all the data collected and created whithin the scope of the bachelor thesis.
 
 To classify multiple images, the file `test_classifier.py` was used.
 
