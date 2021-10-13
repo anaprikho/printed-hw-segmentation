@@ -61,7 +61,7 @@ _disclaimer:_ The quality of the predictions depends on many factors such as inp
 
 All requirements can be found in the file `requirements.txt`.
 
-To create feature vectors from the images and subsequently create a model, the code introduced in the file `fcn-light-BA.py` was used. The models can be found in the /models directory.
+To create feature vectors from the images and subsequently create a model, the code introduced in the file `fcn-light-BA.py` was used. The models can be found in the `models/` folder.
 
 The `dataset/` directory contains all the data collected and created whithin the scope of the bachelor thesis.
 
